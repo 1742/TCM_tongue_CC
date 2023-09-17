@@ -14,6 +14,20 @@ from tqdm import tqdm
 import matplotlib.pyplot as plt
 
 
+"""
+If you want to use these function to draw figure, your effect files instruction must like this:
+effect----
+       |____ method1
+         |____effect_0.json
+         |____effect_1.json
+         |____effect_2.json
+         |____effect_3.json
+         |____effect_4.json
+       |____ method2
+         |____ ...
+"""
+
+
 def predict_entropy(mu: torch.Tensor):
     """
 
@@ -290,7 +304,7 @@ def get_embeddings(dataloader: DataLoader, batch_size: int, model: torch.nn.Modu
 
 if __name__ == '__main__':
     # 绘制单个模型训练曲线
-    # effect_path = r'G:\zzl\Constitution_Classification\runs\SI\resnet34_baseline\train\effect_0.json'
+    # effect_path = r'your effect path\effect_0.json'
     #
     # with open(effect_path, 'r', encoding='utf-8') as f:
     #     effect = json.load(f)
@@ -298,9 +312,9 @@ if __name__ == '__main__':
     # Visualization(effect)
 
     # 绘制ROC
-    runs_path = r'C:\Users\13632\Documents\Python_Scripts\wuzhou.Tongue\Mine\Constitution_Classification\runs\SI'
+    runs_path = r'your effect path'
     draw_multi_model_ROC(runs_path)
 
-    # runs_path = r'C:\Users\13632\Documents\Python_Scripts\wuzhou.Tongue\Mine\Constitution_Classification\runs\SI'
+    # runs_path = r'your effect path'
     # plot_LossCurve(runs_path)
 
